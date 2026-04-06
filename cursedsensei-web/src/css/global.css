@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+:root {
+  color-scheme: dark;
+  --background: #08090a;
+  --foreground: #f4efe6;
+  --text-muted: #b3ab9f;
+  --surface: #171b22;
+  --surface-muted: #1f2530;
+  --border: #303846;
+  --primary: #8f7cff;
+  --primary-foreground: #f8f4ff;
+  --button-bg: #8f7cff;
+  --button-fg: #f8f4ff;
+  --button-hover: #9a88ff;
+  --button-active: #7864ee;
+  --button-border: #a89bff;
+  --secondary: #b7ac9f;
+  --accent: #f08a4b;
+  --shadow: rgba(0, 0, 0, 0.35);
+}
+
+.light {
+  color-scheme: light;
+  --background: #f7f5ef;
+  --foreground: #151515;
+  --text-muted: #6f665c;
+  --surface: #ffffff;
+  --surface-muted: #ece7dc;
+  --border: #d7cdbb;
+  --primary: #6f45d6;
+  --primary-foreground: #ffffff;
+  --button-bg: #6f45d6;
+  --button-fg: #ffffff;
+  --button-hover: #5f38c8;
+  --button-active: #4f2eab;
+  --button-border: #7c5ce0;
+  --secondary: #6a5f52;
+  --accent: #d46a2c;
+  --shadow: rgba(21, 21, 21, 0.12);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-text-muted: var(--text-muted);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-button-bg: var(--button-bg);
+  --color-button-fg: var(--button-fg);
+  --color-button-hover: var(--button-hover);
+  --color-button-active: var(--button-active);
+  --color-button-border: var(--button-border);
+  --color-secondary: var(--secondary);
+  --color-accent: var(--accent);
+  --color-shadow: var(--shadow);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+
+  @apply transition-colors duration-200
+}
+
+#root > div:not(#home, nav) {
+  @apply z-10 relative;
+}

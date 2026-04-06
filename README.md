@@ -5,7 +5,7 @@ A certain Computer Science student lost in the deep space of coding passion.
 </h4>
 
 ## About me
-- Freelanced with [Cenixys](https://www.cenixys.com) in web development and as their sole network engineer.
+- Freelanced with [Cenixys](https://www.cenixys.com) in web development and as their sole systems administrator.
 - **PhilNITS FE** certified
 - Focusing on learning to build AIs with torch and tensorflow and improving my knowledge in cybersecurity for my self-hosted server *Eloquence*.
 

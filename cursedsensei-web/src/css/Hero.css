@@ -1,0 +1,95 @@
+#home {
+    @apply relative h-screen z-0 overflow-hidden;
+}
+
+#home::before,
+#home::after {
+    content: "";
+    @apply fixed left-1/2 -translate-x-1/2 pointer-events-none rounded-full;
+    will-change: opacity, filter;
+}
+
+/* Outer atmospheric glow */
+#home::before {
+    bottom: -26rem;
+    width: min(140rem, 220vw);
+    height: 52rem;
+    background:
+        radial-gradient(ellipse at center,
+            color-mix(in srgb, var(--primary) 36%, transparent) 0%,
+            color-mix(in srgb, var(--primary) 20%, transparent) 33%,
+            color-mix(in srgb, var(--primary) 8%, transparent) 52%,
+            color-mix(in srgb, var(--primary) 0%, transparent) 74%);
+    filter: blur(42px);
+    opacity: 0.7;
+    animation: heroGlowPulseOuter 2.5s ease-in-out infinite;
+}
+
+/* Core arc glow */
+#home::after {
+    bottom: -16rem;
+    width: min(112rem, 188vw);
+    height: 30rem;
+    background:
+        radial-gradient(ellipse at center,
+            color-mix(in srgb, var(--primary-foreground) 94%, transparent) 0%,
+            color-mix(in srgb, var(--primary-foreground) 70%, transparent) 23%,
+            color-mix(in srgb, var(--primary) 34%, transparent) 50%,
+            color-mix(in srgb, var(--primary) 10%, transparent) 65%,
+            color-mix(in srgb, var(--primary) 0%, transparent) 76%);
+    filter: blur(16px);
+    opacity: 0.78;
+    animation: heroGlowPulseInner 1.8s ease-in-out infinite;
+}
+
+.light #home::before {
+    background:
+        radial-gradient(ellipse at center,
+            color-mix(in srgb, #8E7BFF 36%, transparent) 0%,
+            color-mix(in srgb, #B7AAFF 20%, transparent) 33%,
+            color-mix(in srgb, #B7AAFF 8%, transparent) 52%,
+            color-mix(in srgb, #B7AAFF 0%, transparent) 74%);
+}
+
+.light #home::after {
+    background:
+        radial-gradient(ellipse at center,
+            color-mix(in srgb, #F8F4FF 94%, transparent) 0%,
+            color-mix(in srgb, #F8F4FF 70%, transparent) 23%,
+            color-mix(in srgb, #8E7BFF 34%, transparent) 50%,
+            color-mix(in srgb, #B7AAFF 10%, transparent) 65%,
+            color-mix(in srgb, #B7AAFF 0%, transparent) 76%);
+}
+
+@keyframes heroGlowPulseOuter {
+    0%,
+    100% {
+        opacity: 0.62;
+        filter: blur(44px);
+    }
+
+    50% {
+        opacity: 0.92;
+        filter: blur(38px);
+    }
+}
+
+@keyframes heroGlowPulseInner {
+    0%,
+    100% {
+        opacity: 0.68;
+        filter: blur(17px);
+    }
+
+    50% {
+        opacity: 1;
+        filter: blur(12px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #home::before,
+    #home::after {
+        animation: none;
+    }
+}
