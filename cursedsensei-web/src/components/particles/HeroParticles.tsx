@@ -1,20 +1,33 @@
 import { MoveDirection, OutMode, type ISourceOptions } from "@tsparticles/engine";
 import Particles from "@tsparticles/react";
-import { useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParticles } from "../../contexts/ParticlesContext";
 
 export default function HeroParticles() {
     const { isEngineInitialized, theme } = useParticles();
+    const [isShown, setIsShown] = useState(true);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > window.innerHeight) {
+                setIsShown(false);
+            } else {
+                setIsShown(true);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        }
+    }, []);
 
     const options: ISourceOptions = useMemo(
     () => ({
       fpsLimit: 120,
       interactivity: {
         events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
           onHover: {
             enable: true,
             mode: "repulse",
@@ -42,7 +55,7 @@ export default function HeroParticles() {
           width: 1,
         },
         move: {
-          direction: MoveDirection.none,
+          direction: MoveDirection.topLeft,
           enable: true,
           outModes: {
             default: OutMode.out,
@@ -55,7 +68,7 @@ export default function HeroParticles() {
           density: {
             enable: true,
           },
-          value: 30,
+          value: 35,
         },
         opacity: {
           value: 0.5,
@@ -67,12 +80,13 @@ export default function HeroParticles() {
           value: { min: 1, max: 5 },
         },
       },
-      detectRetina: true,
+      // detectRetina: true,
+      detectRetina: false,
     }),
     [theme],
   );
 
-    if (isEngineInitialized) {
+    if (isShown && isEngineInitialized) {
         return <Particles options={options} />
     }
     return <></>
