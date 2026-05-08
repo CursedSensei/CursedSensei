@@ -1,14 +1,14 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import Certifications from './components/sections/Certifications'
-import Contact from './components/sections/Contact'
-import Experience from './components/sections/Experience'
-import Hero from './components/sections/Hero'
-import NavBar from './components/sections/Navbar'
-import Profile from './components/sections/Profile'
-import Projects from './components/sections/Projects'
-import { ParticlesProvider } from './contexts/ParticlesContext'
-import './css/global.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import Certifications from './components/sections/Certifications';
+import Experience from './components/sections/Experience';
+import Footer from './components/sections/Footer';
+import Hero from './components/sections/Hero';
+import NavBar from './components/sections/Navbar';
+import Profile from './components/sections/Profile';
+import Projects from './components/sections/Projects';
+import { ParticlesProvider } from './contexts/ParticlesContext';
+import './css/global.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -19,7 +19,7 @@ createRoot(document.getElementById('root')!).render(
       <Projects />
       <Experience />
       <Certifications />
-      <Contact />
+      <Footer />
     </ParticlesProvider>
   </StrictMode>,
 )

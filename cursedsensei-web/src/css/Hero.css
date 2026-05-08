@@ -17,12 +17,13 @@
     background:
         radial-gradient(ellipse at center,
             color-mix(in srgb, var(--primary) 36%, transparent) 0%,
-            color-mix(in srgb, var(--primary) 20%, transparent) 33%,
+            /* color-mix(in srgb, var(--primary) 20%, transparent) 33%, */
             color-mix(in srgb, var(--primary) 8%, transparent) 52%,
-            color-mix(in srgb, var(--primary) 0%, transparent) 74%);
+            color-mix(in srgb, var(--primary) 0%, transparent) 74%
+            );
     filter: blur(42px);
     opacity: 0.7;
-    animation: heroGlowPulseOuter 2.5s ease-in-out infinite;
+    /* animation: heroGlowPulseOuter 7.5s ease-in-out infinite; */
 }
 
 /* Core arc glow */
@@ -35,30 +36,21 @@
             color-mix(in srgb, var(--primary-foreground) 94%, transparent) 0%,
             color-mix(in srgb, var(--primary-foreground) 70%, transparent) 23%,
             color-mix(in srgb, var(--primary) 34%, transparent) 50%,
-            color-mix(in srgb, var(--primary) 10%, transparent) 65%,
+            /* color-mix(in srgb, var(--primary) 10%, transparent) 65%, */
             color-mix(in srgb, var(--primary) 0%, transparent) 76%);
     filter: blur(16px);
     opacity: 0.78;
-    animation: heroGlowPulseInner 1.8s ease-in-out infinite;
+    animation: heroGlowPulseInner 4.8s ease-in-out infinite;
 }
 
 .light #home::before {
-    background:
-        radial-gradient(ellipse at center,
-            color-mix(in srgb, #8E7BFF 36%, transparent) 0%,
-            color-mix(in srgb, #B7AAFF 20%, transparent) 33%,
-            color-mix(in srgb, #B7AAFF 8%, transparent) 52%,
-            color-mix(in srgb, #B7AAFF 0%, transparent) 74%);
+    background: none;
+    animation: none;
 }
 
 .light #home::after {
-    background:
-        radial-gradient(ellipse at center,
-            color-mix(in srgb, #F8F4FF 94%, transparent) 0%,
-            color-mix(in srgb, #F8F4FF 70%, transparent) 23%,
-            color-mix(in srgb, #8E7BFF 34%, transparent) 50%,
-            color-mix(in srgb, #B7AAFF 10%, transparent) 65%,
-            color-mix(in srgb, #B7AAFF 0%, transparent) 76%);
+    background: none;
+    animation: none;
 }
 
 @keyframes heroGlowPulseOuter {
@@ -91,5 +83,26 @@
     #home::before,
     #home::after {
         animation: none;
+    }
+}
+
+
+
+#hero_title {
+    --tw-tracking: var(--tracking-widest);
+    letter-spacing: var(--tracking-widest);
+
+    animation: heroTitleIntro 1s ease-out;
+}
+
+@keyframes heroTitleIntro {
+    0% {
+        --tw-tracking: 0;
+        letter-spacing: 0;
+    }
+
+    100% {
+        --tw-tracking: var(--tracking-widest);
+        letter-spacing: var(--tracking-widest);
     }
 }
