@@ -1,11 +1,11 @@
 import { MoveDirection, OutMode, type ISourceOptions } from "@tsparticles/engine";
 import Particles from "@tsparticles/react";
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { useParticles } from "../../contexts/ParticlesContext";
 
 export default function HeroParticles() {
     const { isEngineInitialized, theme } = useParticles();
-    const [isShown, setIsShown] = useState(true);
+    // const [isShown, setIsShown] = useState(true);
 
     const options: ISourceOptions = useMemo(
     () => ({
@@ -71,7 +71,7 @@ export default function HeroParticles() {
     [theme],
   );
 
-    if (isShown && isEngineInitialized) {
+    if (isEngineInitialized) {
         return <Particles options={options} />
     }
     return <></>
