@@ -17,7 +17,7 @@ export default function Footer() {
                     </div>
                     <div className="p-4 rounded">
                         <SquareArrowOutUpRight className="inline-block mr-2 mt-1 w-5 h-5 text-accent mb-2" />
-                        <a href="https://www.facebook.com/zillion.gwapo" target="_blank" rel="noopener noreferrer" >facebook.com/zillion</a>
+                        <a href="https://www.linkedin.com/in/john-zillion-reyes-1b4013390" target="_blank" rel="noopener noreferrer" >linkedin.com/zillion</a>
                     </div>
                     <div className="p-4 rounded">
                         <Phone className="inline-block mr-2 mt-1 w-5 h-5 text-accent mb-2" />
