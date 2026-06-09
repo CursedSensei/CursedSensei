@@ -32,8 +32,7 @@ A certain Computer Science student lost in the deep space of coding passion.
 </p>
 
 ## Connect
-- Email: ccszillion@gmail.com
-- Facebook: [John Zillion Reyes](https://www.facebook.com/zillion.gwapo)
+- Linkin: [John Zillion Reyes]([https://www.facebook.com/zillion.gwapo](https://www.linkedin.com/in/john-zillion-reyes-1b4013390))
 
 <p align="center">
 	<img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=CursedSensei&theme=github_dark" alt="GitHub Stats" />
