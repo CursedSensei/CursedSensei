@@ -6,12 +6,22 @@ export default function Experience() {
             role: 'Systems Administrator & Full-stack Developer',
             org: 'Cenixys',
             link: 'https://cenixys.com',
-            period: '2023 — Present',
+            period: 'Aug 2023 — Present',
             bullets: [
                 'Project-based freelancing company',
                 'Developed and collaborated on multiple projects using PHP, Next.js, Flutter and Django',
                 'Managed the end-to-end deployment of hosted projects utilizing Docker and Nginx',
                 'Maintained system integrity by tracking cybersecurity vulnerabilities and optimizing server performance'
+            ],
+        },
+        {
+            role: 'Software Engineer Intern',
+            org: 'Concentrix',
+            link: 'https://www.concentrix.com',
+            period: 'Jul 2026 — Aug 2026',
+            bullets: [
+                'Developed and deployed custom automated tools and scripts using C# designed to streamline internal workflows and enhance system support capabilities.',
+                'automate repetitive operational tasks, significantly reducing manual overhead and improving the overall efficiency of daily IT operations.',
             ],
         },
     ];
